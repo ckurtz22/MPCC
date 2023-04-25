@@ -11,6 +11,9 @@ include_directories(External/matplotlib)
 include_directories(External/Eigen)
 include_directories(External/Json/include)
 
+add_subdirectory(External/blasfeo)
+add_subdirectory(External/hpipm)
+
 add_executable(MPCC
         main.cpp
         types.cpp
@@ -36,4 +39,4 @@ find_package(PythonLibs 2.7)
 target_include_directories(MPCC PRIVATE ${PYTHON_INCLUDE_DIRS})
 target_link_libraries(MPCC ${PYTHON_LIBRARIES})
 
-target_link_libraries(MPCC ${CMAKE_SOURCE_DIR}/External/hpipm/lib/lib/libhpipm.a ${CMAKE_SOURCE_DIR}/External/blasfeo/lib/lib/libblasfeo.a m)
+target_link_libraries(MPCC hpipm blasfeo m)

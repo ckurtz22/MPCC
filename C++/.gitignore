@@ -1,0 +1,9 @@
+# Project specific excludes
+/MPCC
+/build
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
